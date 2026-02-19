@@ -1,0 +1,47 @@
+<!-- Sidenav Container Wrap Everything -->
+<mat-sidenav-container class="sidenav-container">
+
+  <!-- Mobile Drawer -->
+  <mat-sidenav #drawer mode="over" position="start" id="slideheight" class="mobile-sidenav">
+    <mat-nav-list>
+      <a mat-list-item routerLink="/" (click)="drawer.close()">Home</a>
+      <a mat-list-item routerLink="/apply-member" (click)="drawer.close()">Member Apply</a>
+      <a mat-list-item routerLink="/idcard" (click)="drawer.close()">ID Card</a>
+      <a mat-list-item routerLink="/events" (click)="drawer.close()">Events</a>
+      <a mat-list-item routerLink="/donate" (click)="drawer.close()">Donate</a>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <!-- Main Content -->
+  <mat-sidenav-content>
+
+    <!-- TOP BAR -->
+    <div class="top-bar">
+      <div class="logo-section">
+        <img src="assets/logo1.png" alt="Logo">
+        <h2>Samrat Ashok Buddha Vihar Bauddh Samaj Kalyan Samiti</h2>
+      </div>
+    </div>
+
+    <!-- NAVBAR -->
+    <mat-toolbar class="navbar">
+
+      <!-- Mobile Menu Button -->
+      <button mat-icon-button class="mobile-menu-btn" (click)="drawer.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+
+      <!-- Desktop Menu -->
+      <div class="nav-links">
+        <a mat-button routerLink="/">Home</a>
+        <a mat-button routerLink="/apply-member">Member Apply</a>
+        <a mat-button routerLink="/idcard">ID Card</a>
+        <a mat-button routerLink="/events">Events</a>
+        <a mat-button routerLink="/donate">Donate</a>
+      </div>
+
+    </mat-toolbar>
+
+  </mat-sidenav-content>
+
+</mat-sidenav-container>

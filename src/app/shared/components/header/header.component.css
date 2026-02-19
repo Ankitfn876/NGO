@@ -1,0 +1,80 @@
+/* Full Height Container */
+/* .sidenav-container {
+  height: 100vh;
+} */
+
+/* TOP BAR */
+.top-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 20px;
+  background: linear-gradient(to right, #f5f7fa, #e4efe9);
+}
+
+.logo-section {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo-section img {
+  width: 60px;
+  height: 60px;
+}
+
+.logo-section h2 {
+  font-weight: 700;
+  color: #1E3A8A;
+  margin: 0;
+  text-align: center;
+}
+
+/* NAVBAR */
+.navbar {
+  background: #1E3A8A;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  color: white;
+  font-weight: 500;
+}
+
+/* Mobile Button */
+.mobile-menu-btn {
+  display: none;
+  color: white;
+  position: absolute;
+  right: 10px;
+}
+
+/* Mobile Drawer */
+.mobile-sidenav {
+  width: 260px;
+}
+
+
+
+/* RESPONSIVE */
+@media (max-width: 992px) {
+
+  .nav-links {
+    display: none;
+  }
+
+  .mobile-menu-btn {
+    display: block;
+  }
+
+  .logo-section h2 {
+    font-size: 16px;
+  }
+}

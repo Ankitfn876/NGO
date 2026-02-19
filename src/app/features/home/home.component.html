@@ -1,0 +1,163 @@
+<!-- HERO SECTION -->
+<section class="hero">
+  <div class="carousel" (touchstart)="onTouchStart($event)" (touchend)="onTouchEnd($event)">
+
+    <div class="slide" *ngFor="let image of images; let i = index" [class.active]="i === currentIndex"
+      [style.background-image]="'linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.6)), url(' + image + ')'">
+      <div class="hero-content">
+        <h1>Empowering Society Together</h1>
+        <p>सशक्त समाज की ओर एक कदम</p>
+        <button mat-raised-button routerLink="/donate" color="primary">
+          Donate Now
+        </button>
+      </div>
+    </div>
+
+    <!-- Arrows -->
+    <button class="nav prev" (click)="prevSlide()">❮</button>
+    <button class="nav next" (click)="nextSlide()">❯</button>
+
+    <!-- Dots -->
+    <div class="dots">
+      <span *ngFor="let image of images; let i = index" [class.active]="i === currentIndex" (click)="goToSlide(i)">
+      </span>
+    </div>
+
+  </div>
+</section>
+<section class="home-wrapper">
+
+  <!-- Main Grid -->
+  <div class="home-grid">
+    <!-- LEFT -->
+    <div class="card news-card">
+      <div class="section-title">
+      <span>Latest News</span>
+    </div>
+      <ul>
+        <li *ngFor="let news of newsList">
+          {{ news }}
+        </li>
+      </ul>
+    </div>
+
+    <!-- CENTER -->
+    <div class="card activity-card">
+      <div class="section-title active">
+        <span>Latest Activity</span>
+      </div>
+      <div class="carousel">
+        <div class="slide" *ngFor="let image of images; let i = index" [class.active]="i === currentIndex"
+          [style.backgroundImage]="'url(' + image + ')'"></div>
+
+        <button class="nav prev" (click)="prevSlide()">❮</button>
+        <button class="nav next" (click)="nextSlide()">❯</button>
+      </div>
+    </div>
+
+    <!-- RIGHT -->
+    <div class="card members-card">
+      <div class="section-title">
+        <span>Our Members</span>
+      </div>
+      <div class="member" *ngFor="let member of members">
+        <img [src]="member.image" />
+        <h4>{{ member.name }}</h4>
+        <p>{{ member.role }}</p>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+
+
+
+<!-- FEATURES -->
+<section class="section">
+  <h2 class="section-title">Our Key Features</h2>
+
+  <div class="feature-grid">
+    <mat-card *ngFor="let f of features" class="feature-card">
+      <mat-icon>{{f.icon}}</mat-icon>
+      <h3>{{f.title}}</h3>
+      <p>{{f.desc}}</p>
+    </mat-card>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section class="project-section">
+
+  <h2 class="section-title">Our Projects</h2>
+
+  <div class="project-grid">
+
+    <div class="project-card" *ngFor="let project of projects">
+      <img [src]="project.image" alt="project image">
+
+      <div class="overlay">
+        <h3>{{ project.title }}</h3>
+        <button mat-icon-button>
+          <mat-icon>arrow_forward</mat-icon>
+        </button>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- EVENTS -->
+<section class="section">
+  <h2 class="section-title">Upcoming Events</h2>
+
+  <mat-list>
+    <mat-list-item *ngFor="let e of events">
+      <mat-icon matListIcon>event</mat-icon>
+      <h4 matLine>{{e.title}}</h4>
+      <p matLine>{{e.date}}</p>
+    </mat-list-item>
+  </mat-list>
+</section>
+
+<!-- CONTACT FORM -->
+<section class="section bg-light">
+  <h2 class="section-title">Contact Us</h2>
+
+  <form class="contact-form">
+    <mat-form-field appearance="fill">
+      <mat-label>Name</mat-label>
+      <input matInput>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Email</mat-label>
+      <input matInput>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Message</mat-label>
+      <textarea matInput rows="4"></textarea>
+    </mat-form-field>
+
+    <button mat-raised-button color="primary">Send Message</button>
+  </form>
+</section>
+
+<!-- GOOGLE MAP -->
+<section class="section">
+  <h2 class="section-title">Our Location</h2>
+
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18..." width="100%" height="300" style="border:0;"
+    allowfullscreen="">
+  </iframe>
+</section>
+
+
+<!-- WHATSAPP FLOAT -->
+<a href="https://wa.me/919999999999" class="whatsapp-float" target="_blank">
+  <mat-icon>chat</mat-icon>
+</a>

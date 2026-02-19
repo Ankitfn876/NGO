@@ -1,0 +1,44 @@
+<div class="page-wrapper">
+
+  <mat-card class="id-card-container">
+
+    <div #idCard class="id-card">
+
+      <!-- Header -->
+      <div class="id-header">
+        <h3>NGO Organization</h3>
+        <span>Member Identity Card</span>
+      </div>
+
+      <!-- Body -->
+      <div class="id-body">
+
+        <div class="photo-section">
+          <img [src]="member.photo" alt="Member Photo">
+        </div>
+
+        <div class="details-section">
+          <h2>{{ member.name }}</h2>
+          <p><strong>ID:</strong> {{ member.id }}</p>
+          <p><strong>Role:</strong> {{ member.role }}</p>
+          <p><strong>Mobile:</strong> {{ member.mobile }}</p>
+        </div>
+
+      </div>
+
+      <!-- Footer -->
+      <div class="id-footer">
+        <p>Empowering Society Together</p>
+      </div>
+
+    </div>
+
+    <div class="action-buttons" style="display: none;">
+      <button mat-raised-button color="primary" (click)="downloadPDF()">
+        Download ID Card
+      </button>
+    </div>
+
+  </mat-card>
+
+</div>

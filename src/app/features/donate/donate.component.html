@@ -1,0 +1,68 @@
+<section class="donate-section">
+
+  <div class="donate-container">
+
+    <!-- Left Info Section -->
+    <div class="donate-info">
+      <h2>Support Our Mission</h2>
+      <p>Your contribution helps us in education, health, and social welfare programs.</p>
+      <!-- <img src="assets/donate.jpg" alt="donation"> -->
+    </div>
+
+    <!-- Donation Form -->
+    <mat-card class="donate-card">
+
+      <h3>Make a Donation</h3>
+
+      <!-- Quick Amount Buttons -->
+      <div class="amount-buttons">
+        <button mat-stroked-button
+                *ngFor="let amt of amounts"
+                [class.active]="selectedAmount === amt"
+                (click)="selectAmount(amt)">
+          ₹{{ amt }}
+        </button>
+      </div>
+
+      <form [formGroup]="donateForm" (ngSubmit)="submitDonation()">
+
+        <mat-form-field appearance="outline">
+          <mat-label>Full Name</mat-label>
+          <input matInput formControlName="name">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Email</mat-label>
+          <input matInput formControlName="email">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Mobile</mat-label>
+          <input matInput formControlName="mobile">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Amount (₹)</mat-label>
+          <input matInput type="number" formControlName="amount">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Payment Method</mat-label>
+          <mat-select formControlName="paymentMode">
+            <mat-option value="UPI">UPI</mat-option>
+            <mat-option value="Card">Credit/Debit Card</mat-option>
+            <mat-option value="NetBanking">Net Banking</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <button mat-raised-button color="primary" type="submit" class="donate-btn">
+          Donate Now
+        </button>
+
+      </form>
+
+    </mat-card>
+
+  </div>
+
+</section>

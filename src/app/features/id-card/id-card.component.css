@@ -1,0 +1,96 @@
+.page-wrapper {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #f4f6f9, #e6ecf5);
+  padding: 20px;
+}
+
+.id-card-container {
+  padding: 30px;
+  border-radius: 20px;
+  max-width: 400px;
+  width: 100%;
+}
+
+.id-card {
+  width: 320px;
+  height: 200px;
+  background: #ffffff;  
+  border-radius: 12px;
+  overflow: hidden;
+  border: 2px solid #1E3A8A;
+  box-shadow: none;     
+}
+
+
+
+/* Header */
+.id-header {
+  background: linear-gradient(135deg, #1E3A8A, #2563EB);
+  color: white;
+  text-align: center;
+  padding: 15px;
+}
+
+.id-header h3 {
+  margin: 0;
+}
+
+.id-header span {
+  font-size: 12px;
+}
+
+/* Body */
+.id-body {
+  display: flex;
+  padding: 20px;
+  gap: 15px;
+}
+
+.photo-section img {
+  width: 90px;
+  height: 110px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 2px solid #1E3A8A;
+}
+
+.details-section h2 {
+  margin: 0;
+  color: #1E3A8A;
+}
+
+.details-section p {
+  margin: 4px 0;
+  font-size: 14px;
+}
+
+/* Footer */
+.id-footer {
+  text-align: center;
+  background: #f1f5ff;
+  padding: 10px;
+  font-size: 12px;
+  color: #555;
+}
+
+.action-buttons {
+  margin-top: 20px;
+  text-align: center;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .id-body {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
