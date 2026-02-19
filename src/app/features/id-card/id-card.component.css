@@ -93,4 +93,8 @@
     align-items: center;
     text-align: center;
   }
+  .id-card{
+    width: 280px;
+    height: auto;
+  }
 }
